@@ -25,7 +25,7 @@ int passFlag = 0; // setting flag so loop runs once
 void setup() {
   //wake up the MAX72XX from power-saving mode
   lc.shutdown(0, false);
-  lc.setIntensity(0, 16);  // 2nd number is brightness.  using 16 with a film over the 8x8
+  lc.setIntensity(0, 15);  // 2nd number is brightness. (0 to 15)  using 15 with a film over the 8x8
 }
 
 void loop() {
@@ -45,8 +45,8 @@ void loop() {
 }
 
 void Animation() {
-  unsigned long delLong = 1875; // longer delay for lighting it up  187500 for 25 minutes split 8 ways
-  unsigned long delShort = 375; // shorter delay for removing LEDs  37500 for 5 minutes split 8 ways
+  unsigned long delLong = 187500; // longer delay for lighting it up  187500 for 25 minutes split 8 ways
+  unsigned long delShort = 37500; // shorter delay for removing LEDs  37500 for 5 minutes split 8 ways
   lc.setRow(0, 0, one[0]);
   lc.setRow(0, 1, one[1]);
   lc.setRow(0, 2, one[2]);
